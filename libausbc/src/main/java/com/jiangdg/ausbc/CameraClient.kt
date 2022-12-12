@@ -81,7 +81,8 @@ class CameraClient internal constructor(builder: Builder) : IPreviewDataCallBack
         mRequest = mRequest ?: CameraRequest.Builder().create()
         mCtx?.let { context ->
             if (context !is LifecycleOwner) {
-                throw IllegalArgumentException("context should be subclass of LifecycleOwner!")
+//                throw IllegalArgumentException("context should be subclass of LifecycleOwner!")
+                return@let
             }
             addLifecycleObserver(context)
             // listener camera status
